@@ -141,7 +141,7 @@ public class GenerateCube : MonoBehaviour
             Color.yellow,
 
             // Front face
-            Color.blue,
+            Color.black, // Changed to show gradient
             Color.blue,
             Color.blue,
 
