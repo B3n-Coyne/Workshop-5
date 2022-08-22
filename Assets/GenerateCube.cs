@@ -3,6 +3,7 @@
 
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -23,6 +24,13 @@ public class GenerateCube : MonoBehaviour
         // e.g. material.color = ...;
         // Turns out we can also set the material's shader in a similar way:
         material.shader = givenShader;
+    }
+
+    private void Update()
+    {
+        var material = GetComponent<Renderer>().material;
+
+        material.color =  Color.HSVToRGB((Time.time%1), 1f, 1f);
     }
 
     private Mesh CreateMesh()
