@@ -12,6 +12,8 @@ Shader "Unlit/SolidColorShader"
 
 			#include "UnityCG.cginc"
 
+			uniform float4 _Color;
+
 			struct vertIn
 			{
 				float4 vertex : POSITION;
@@ -33,7 +35,8 @@ Shader "Unlit/SolidColorShader"
 			// Implementation of the fragment (pixel) shader
 			fixed4 frag(vertOut v) : SV_Target
 			{
-				return float4(0.0f, 0.0f, 0.0f, 1.0f);
+				//return float4(255.0f, 255.0f, 0.0f, 1.0f);
+				return _Color;
 			}
 			ENDCG
 		}
