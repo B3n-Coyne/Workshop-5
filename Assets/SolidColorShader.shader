@@ -38,8 +38,13 @@ Shader "Unlit/SolidColorShader"
 			// Implementation of the fragment (pixel) shader
 			fixed4 frag(vertOut v) : SV_Target
 			{
+				// Use for hard-colded color
 				//return float4(1.0f, 1.0f, 0.0f, 1.0f);
+				
+				// Use for changing color
 				//return _Color;
+
+				// Use for color defined in GenerateCube
 				return v.color;
 			}
 			ENDCG
